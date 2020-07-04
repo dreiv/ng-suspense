@@ -5,3 +5,12 @@
     <h4>Fetching Users...</h4>
   </ng-template>
 </app-suspense>
+
+<app-suspense>
+  <app-not-lazy></app-not-lazy>
+  <app-not-lazy2></app-not-lazy2>
+
+  <ng-template fallbackView>
+    <span>Loading... Please wait.</span>
+  </ng-template>
+</app-suspense>
