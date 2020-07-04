@@ -15,7 +15,7 @@ export class UsersService {
     .pipe(
       delay(2000),
       map(res => {
-        if (Math.random() < 0.6) {
+        if (Math.random() < 0.5) {
           throw new Error('Error loading users');
         }
 
