@@ -1,1 +1,7 @@
-<h1>hello world!</h1>
+<app-suspense>
+  <ng-template [defaultView]="usersFactory"></ng-template>
+
+  <ng-template fallbackView>
+    <h4>Fetching Users...</h4>
+  </ng-template>
+</app-suspense>
