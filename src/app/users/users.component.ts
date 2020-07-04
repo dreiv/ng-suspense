@@ -21,7 +21,10 @@ export default class UsersComponent implements Suspenseable {
 
   setup(): Observable<any[]> {
     return this.userService.users$
-      .pipe(tap((users) => (this.users = users)));
+      .pipe(
+        delay(2000),
+        tap((users) => (this.users = users))
+      );
   }
 }
 

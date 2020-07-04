@@ -56,6 +56,7 @@ export class SuspenseComponent implements AfterViewInit, OnDestroy {
           this.anchor.createEmbeddedView(this.errorView.tpl);
         },
       });
+
       return;
     }
 

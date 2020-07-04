@@ -7,5 +7,4 @@ import { Suspenseable } from './types';
 export class DefaultViewDirective {
   @Input('defaultView')
   fetch!: () => Promise<{ default: Type<Suspenseable> }>;
-
 }
