@@ -1,9 +1,10 @@
 import { Component, NgModule } from '@angular/core';
-import { Suspenseable } from '../types';
-import { HttpClient } from '@angular/common/http';
-import { tap, delay } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { tap, delay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+
+import { UsersService } from '../services/users.service';
+import { Suspenseable } from '../types';
 
 @Component({
   selector: 'app-test',
@@ -16,15 +17,11 @@ import { Observable } from 'rxjs';
 })
 export default class UsersComponent implements Suspenseable {
   users: any[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private userService: UsersService) {}
 
   setup(): Observable<any[]> {
-    return this.http
-      .get<any[]>('https://jsonplaceholder.typicode.com/users')
-      .pipe(
-        delay(2000),
-        tap((users) => (this.users = users))
-      );
+    return this.userService.users$
+      .pipe(tap((users) => (this.users = users)));
   }
 }
 

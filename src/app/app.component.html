@@ -2,7 +2,11 @@
   <ng-template [defaultView]="usersFactory"></ng-template>
 
   <ng-template fallbackView>
-    <h4>Fetching Users...</h4>
+    <h4>⏳ Fetching Users...</h4>
+  </ng-template>
+
+  <ng-template errorView>
+    <h4>😵 Error Fetching Users.</h4>
   </ng-template>
 </app-suspense>
 
@@ -11,6 +15,6 @@
   <app-not-lazy2></app-not-lazy2>
 
   <ng-template fallbackView>
-    <span>Loading... Please wait.</span>
+    <span>⏳ Loading... Please wait.</span>
   </ng-template>
 </app-suspense>
